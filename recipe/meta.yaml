@@ -1,6 +1,6 @@
 {% set name = "schematics" %}
-{% set version = "2.1.0" %}
-{% set sha256 = "a40b20635c0e43d18d3aff76220f6cd95ea4decb3f37765e49529b17d81b0439" %}
+{% set version = "2.1.1" %}
+{% set sha256 = "34c87f51a25063bb498ae1cc201891b134cfcb329baf9e9f4f3ae869b767560f" %}
 
 package:
   name: {{ name|lower }}
@@ -13,10 +13,10 @@ source:
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
     - pip
@@ -34,17 +34,17 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Python Data Structures for Humans'
+  summary: Python Data Structures for Humans
   doc_url: https://schematics.readthedocs.io/en/latest/
   dev_url: https://github.com/schematics/schematics
   description: |
     Schematics is a Python library to combine types into structures, validate them, and transform the shapes of your data based on simple descriptions.
-    
+
     The internals are similar to ORM type systems, but there is no database layer in Schematics. Instead, we believe that building a database layer is made significantly easier when Schematics handles everything but writing the query.
-    
+
     Further, it can be used for a range of tasks where having a database involved may not make sense.
 
-  
+
 extra:
   recipe-maintainers:
     - meatz
